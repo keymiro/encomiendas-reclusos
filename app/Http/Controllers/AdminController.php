@@ -13,7 +13,8 @@ class AdminController extends Controller
     }
     public function index()
     {
-
+        $users = User::all();
+        return view('admin.index')->with(compact('users'));
     }
     public function create()
     {

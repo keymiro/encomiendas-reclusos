@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 Route::get('/',[HomeController::class,'login'])->name('login.view');
+Route::get('Admin/index',[AdminController::class,'index'])->name('admin.index');
 Route::get('Admin/create',[AdminController::class,'create'])->name('admin.create');
 Route::post('Admin/create',[AdminController::class,'store'])->name('admin.store');
 Route::get('/home', [HomeController::class, 'index'])->name('home');

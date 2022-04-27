@@ -43,7 +43,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                           </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.create')}}">Administrador</a>
+                            <a class="nav-link" href="{{route('admin.index')}}">Administrador</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Reclusos</a>
