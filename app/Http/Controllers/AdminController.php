@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
 
@@ -14,9 +19,11 @@ class AdminController extends Controller
     {
         return view('admin.create');
     }
-    public function store()
+    public function store(Request $request)
     {
+        User::create($request->all());
 
+        return back()->with('notification','Registro creado correctamente');
     }
     public function show()
     {

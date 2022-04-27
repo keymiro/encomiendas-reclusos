@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <script src="https://kit.fontawesome.com/bbf6ac91e9.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -93,6 +93,8 @@
         background-color: darkgrey;
     }
 </style>
+<br>
+@include('layouts.notification')
         <main class="py-4">
             @yield('content')
         </main>
