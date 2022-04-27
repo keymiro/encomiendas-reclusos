@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes(['register' => false]);
+Route::get('/',[HomeController::class,'login'])->name('login.view');
+Route::get('Admin/create',[AdminController::class,'create'])->name('admin.create');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

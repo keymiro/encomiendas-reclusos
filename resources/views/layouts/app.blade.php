@@ -21,7 +21,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        @if(auth()->check())
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -38,13 +39,25 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.create')}}">Administrador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reclusos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Encomiendas</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -74,7 +87,12 @@
                 </div>
             </div>
         </nav>
-
+        @endif
+<style>
+    body {
+        background-color: darkgrey;
+    }
+</style>
         <main class="py-4">
             @yield('content')
         </main>
