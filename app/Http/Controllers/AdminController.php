@@ -55,10 +55,14 @@ class AdminController extends Controller
             $User = User::findOrFail($id);
 
             if ($User->state =='activo') {
+
                 $User->update(['state'=>'inactivo',]);
+
                 return back()->with('notification','Registro inactivado correctamente.');
             }else{
+
                 $User->update(['state'=>'activo']);
+
                 return back()->with('notification','Registro activado correctamente.');
             }
 

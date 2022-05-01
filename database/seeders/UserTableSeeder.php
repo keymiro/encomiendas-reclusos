@@ -22,7 +22,26 @@ class UserTableSeeder extends Seeder
             'email'           =>'superadmin@gmail.com',
             'password'        => Hash::make('12345678'),
             'rol'            =>'super-admin',
-            'state'           =>'1',
+            'state'           =>'activo',
+        ]);
+
+        DB::table('users')->insert([
+            'document'        =>'788757',
+            'names'           =>'camilo',
+            'lastnames'     =>'mancipe',
+            'email'           =>'mancipe@gmail.com',
+            'password'        => Hash::make('12345678'),
+            'rol'            =>'super-admin',
+            'state'           =>'activo',
+        ]);
+        DB::table('users')->insert([
+            'document'        =>'985445',
+            'names'           =>'fulano',
+            'lastnames'     =>' Admin',
+            'email'           =>'fulanon@gmail.com',
+            'password'        => Hash::make('12345678'),
+            'rol'            =>'super-admin',
+            'state'           =>'activo',
         ]);
 
     }

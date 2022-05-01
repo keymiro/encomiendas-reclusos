@@ -39,10 +39,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                                 <a class="nav                            <a class="nav-link active" aria-current="page" href="//>Inicio</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{route('home')}}">Inicio</a>
                           </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.create')}}">Administrador</a>
+                            <a class="nav-link" href="{{route('admin.index')}}">Administrador</a>
                         </li>
                         <li class="nav-item">
                         <div class="dropdown">
