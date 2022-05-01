@@ -11,11 +11,12 @@
     <script src="https://kit.fontawesome.com/bbf6ac91e9.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></head>
 
+<script src="{{ asset('js/EditRecluso.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -39,8 +40,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                                 <a class="nav                            <a class="nav-link active" aria-current="page" href="//>Inicio</a>
                           </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('admin.create')}}">Administrador</a>
@@ -52,12 +52,22 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="Rc">
                                 <a class="dropdown-item" href="{{route('recluso.create')}}">Crear</a>
-                                <a href="" class="dropdown-item" >Todos</a>
+                                <a href="{{route('recluso.show')}}" class="dropdown-item" >Todos</a>
                             </div>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Encomiendas</a>
+                        <div class="dropdown">
+                            <a id="Ec" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Ecomiendas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="Ec">
+                                <a class="dropdown-item" href="#">Recibir Ecomientas</a>
+                                <a href="#" class="dropdown-item" >Dashboad de Entrega</a>
+                                <a href="#" class="dropdown-item" >Dashboad de Devolución</a>
+                            </div>
+                            </div>
+                    </div>
                         </li>
                         <!-- Authentication Links -->
                         @guest

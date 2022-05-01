@@ -9,33 +9,55 @@
                 <div class="card-body">
                     <form class="row g-3" method="POST" action="{{route('recluso.create')}}">
                         @csrf
-                        <div class="col-md-6">
-                          <label for="inputTypeDocument" class="form-label">Tipo de Documento</label>
-                          <input type="text" class="form-control" id="inputTypeDocument" name="email">
-                        </div>
+                        <input type="text" style="display:none;" value="1" name="idusercreate">
+                        {{ $Us}}
+                        <div class="col-md-4">
+                            <label for="inputSexo" class="form-label">Sexo</label>
+                            <select id="inputSexo" class="form-select" name="sex">
+                              <option selected>Seleccione el sexo</option>
+                              <option value="1">Hombre</option>
+                              <option value="2">Mujer</option>
+                            </select>
+                          </div>
+                        <div class="col-md-4">
+                            <label for="inputTypeDocument" class="form-label">Tipo de Documento</label>
+                            <select id="inputTypeDocument" class="form-select" name="idtypedocument">
+                              <option selected>Seleccione tipo documento</option>
+                              @foreach($TD as $TypeDoc)
+                              <option value="{{ $TypeDoc->id }}">{{ $TypeDoc->typedoc }}</option>
+                              @endforeach
+                            </select>
+                          </div>
                         <div class="col-md-6">
                           <label for="inputDocument" class="form-label">Número De Documento</label>
-                          <input type="text" class="form-control" id="inputDocument" name="email">
+                          <input type="text" class="form-control" id="inputDocument" name="document">
                         </div>
                         <div class="col-md-6">
                           <label for="inputCodeRecluso" class="form-label">Código de Recluso</label>
-                          <input type="text" class="form-control" id="inputCodeRecluso" name="email">
+                          <input type="text" class="form-control" id="inputCodeRecluso" name="coderecluse">
                         </div>
                         <div class="col-md-6">
                           <label for="inputNames" class="form-label">Nombres de Recluso</label>
-                          <input type="text" class="form-control" id="inputNames" name="password">
+                          <input type="text" class="form-control" id="inputNames" name="namerecluse">
                         </div>
                         <div class="col-md-6">
                             <label for="inputSurName" class="form-label">Apellidos de Recluso</label>
-                            <input type="text" class="form-control" id="inputSurName" name="names">
+                            <input type="text" class="form-control" id="inputSurName" name="surnamerecluse">
                           </div>
-                          <div class="col-md-6">
-                            <label for="inputPavilion" class="form-label">Pabellón<nav></nav></label>
-                            <input type="text" class="form-control" id="inputPavilion" name="lastnames">
+
+                          <div class="col-md-4">
+                            <label for="inputPavilion" class="form-label">Pabellón</label>
+                            <select id="inputPavilion" class="form-select" name="idpavilions">
+                              <option selected>Seleccione Pabellón</option>
+                              @foreach($PB as $Pv)
+                              <option value="{{ $Pv->id }}">{{ $Pv->namepavilions }}</option>
+                              @endforeach
+                            </select>
                           </div>
+
                         <div class="col-md-6">
                           <label for="inputNumberCell" class="form-label">Número de Celda</label>
-                          <input type="text" class="form-control" id="inputNumberCell" name="document">
+                          <input type="text" class="form-control" id="inputNumberCell" name="jailcells">
                         </div>
                         <div class="col-md-4">
                             <label for="inputState" class="form-label">Estado</label>

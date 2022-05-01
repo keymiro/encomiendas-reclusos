@@ -16,10 +16,11 @@ class CreateReclusesTable extends Migration
         Schema::create('recluses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('idtypedocument')->comment('tipo de documento');
-            $table->string('document',150)->comment('documneto');
-            $table->string('coderecluse',150)->comment('codigo del recluso');
-            $table->string('namereculse',150)->comment('Nombre del recluso');
-            $table->string('surnamereculse',150)->comment('Apellidos');
+            $table->string('document',30)->comment('documneto');
+            $table->string('coderecluse',20)->comment('codigo del recluso');
+            $table->string('Sex',1)->comment('Sexo');
+            $table->string('namerecluse',100)->comment('Nombre del recluso');
+            $table->string('surnamerecluse',100)->comment('Apellidos');
             $table->unsignedBigInteger('idpavilions')->comment('pabellon');
             $table->string('jailcells')->comment('celda');
             $table->string('state',1)->comment('Estado del recluso');

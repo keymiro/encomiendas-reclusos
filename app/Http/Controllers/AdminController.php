@@ -32,7 +32,6 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         User::create($request->all());
-
         return back()->with('notification','Registro creado correctamente');
     }
     public function show($id)
@@ -56,14 +55,10 @@ class AdminController extends Controller
             $User = User::findOrFail($id);
 
             if ($User->state =='activo') {
-
                 $User->update(['state'=>'inactivo',]);
-
                 return back()->with('notification','Registro inactivado correctamente.');
             }else{
-
                 $User->update(['state'=>'activo']);
-
                 return back()->with('notification','Registro activado correctamente.');
             }
 

@@ -22,9 +22,18 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 Route::get('/',[HomeController::class,'login'])->name('login.view');
+Route::get('Admin/index',[AdminController::class,'index'])->name('admin.index');
+Route::get('Admin/index/usersAjax',[AdminController::class,'usersAjax'])->name('admin.usersAjax');
 Route::get('Admin/create',[AdminController::class,'create'])->name('admin.create');
 Route::post('Admin/create',[AdminController::class,'store'])->name('admin.store');
+Route::get('Admin/edit/{id}',[AdminController::class,'edit'])->name('admin.edit');
+Route::patch('Admin/update/{id}',[AdminController::class,'update'])->name('admin.update');
+Route::get('Admin/show/{id}',[AdminController::class,'show'])->name('admin.show');
+Route::get('Admin/inactive/{id}',[AdminController::class,'destroy'])->name('admin.destroy');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
 Route::get('/recluso/create',[ReclusoController::class,'index'])->name('recluso.create');
 Route::post('/recluso/create',[ReclusoController::class,'store'])->name('recluso.store');
+Route::get('Admin/show',[ReclusoController::class,'show'])->name('recluso.show');
 
