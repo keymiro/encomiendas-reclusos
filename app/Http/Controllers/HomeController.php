@@ -25,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = User::count();
+        
         return view('home')->with(compact('user'));
     }
     public function login()

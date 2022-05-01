@@ -13,6 +13,7 @@
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
                                    <h4>Total Admin : {{$user}}</h4>
+                                   
                                 </div>
                             </div>
                         </div>

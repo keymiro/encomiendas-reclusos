@@ -61,7 +61,6 @@ class AdminController extends Controller
 
                 return back()->with('notification','Registro inactivado correctamente.');
             }else{
-
                 $User->update(['state'=>'activo']);
 
                 return back()->with('notification','Registro activado correctamente.');
