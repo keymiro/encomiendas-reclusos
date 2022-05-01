@@ -9,7 +9,6 @@
                 <div class="card-body">
                     <form class="row g-3" method="POST" action="{{route('recluso.create')}}">
                         @csrf
-                        <input type="text" style="display:none;" value="1" name="idusercreate">
                         {{ $Us}}
                         <div class="col-md-4">
                             <label for="inputSexo" class="form-label">Sexo</label>

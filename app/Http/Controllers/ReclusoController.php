@@ -26,16 +26,28 @@ class ReclusoController extends Controller
     }
     public function store(Request $request)
     {
-        recluse::create($request->all());
+        $document = recluse::create([
+            'title'=>$request['title'],
+            'idtypedocument'=>$request['idtypedocument'],
+            'document'  =>$request['document'],
+            'coderecluse'=>$request['coderecluse'],
+            'sex' =>$request['sex'],
+            'namerecluse'=>$request['namerecluse'],
+            'surnamerecluse'  =>$request['surnamerecluse'],
+            'idpavilions'    =>$request['idpavilions'],
+            'jailcells'    =>$request['jailcells'],
+            'state'    =>$request['state'],
+            'idusercreate'      =>auth()->user()->id,
+        ]);
+
         return back()->with('notification','Registro creado correctamente');
     }
     public function show()
     {
-        $Us = session('UserId');
         $TD = typedoc::all();
         $PB = pavilion::all();
         $Rc = recluse::all();
-        return view('reclusos.show')->with(compact('Rc','TD','PB','Us'));
+        return view('reclusos.show')->with(compact('Rc','TD','PB'));
     }
     public function edit()
     {
@@ -44,7 +56,19 @@ class ReclusoController extends Controller
     public function update(Request $request, $idr)
     {
         $dt = recluse::findOrFail($idr);
-        $dt->update($request->all());
+        $dt -> update([
+            'title'=>$request['title'],
+            'idtypedocument'=>$request['idtypedocument'],
+            'document'  =>$request['document_edit'],
+            'coderecluse'=>$request['coderecluse'],
+            'sex' =>$request['sex'],
+            'namerecluse'=>$request['namerecluse'],
+            'surnamerecluse'  =>$request['surnamerecluse'],
+            'idpavilions'    =>$request['idpavilions'],
+            'jailcells'    =>$request['jailcells'],
+            'state'    =>$request['state'],
+            'iduseredit'      =>auth()->user()->id,
+        ]);
         return back()->with('notification','Registro actualizado correctamente');
     }
     public function destroy()
