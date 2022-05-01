@@ -19,6 +19,7 @@ class recluse extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'idtypedocument',
         'document',
         'coderecluse',

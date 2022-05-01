@@ -41,9 +41,11 @@ class ReclusoController extends Controller
     {
 
     }
-    public function update()
+    public function update(Request $request, $idr)
     {
-
+        $dt = recluse::findOrFail($idr);
+        $dt->update($request->all());
+        return back()->with('notification','Registro actualizado correctamente');
     }
     public function destroy()
     {

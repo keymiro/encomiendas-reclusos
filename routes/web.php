@@ -35,5 +35,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/recluso/create',[ReclusoController::class,'index'])->name('recluso.create');
 Route::post('/recluso/create',[ReclusoController::class,'store'])->name('recluso.store');
-Route::get('Admin/show',[ReclusoController::class,'show'])->name('recluso.show');
+Route::get('recluso/show',[ReclusoController::class,'show'])->name('recluso.show');
+Route::patch('recluso/update/{idr}',[ReclusoController::class,'update'])->name('recluso.update');
 

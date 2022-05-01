@@ -21,52 +21,45 @@
                                 <th>Apellidos</th>
                                 <th>Estado</th>
                                 <th>Acción</th>
+                                <th style=" display:none;">Id</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @php
-                        $a=0;
-                        $b=0;
-                        $c=0;
-                        @endphp
-
-
                             @foreach($Rc as $recluso)
                             <tr>
                                 @foreach($PB as $pb)
                                   @if(($recluso->idpavilions)==($pb->id))
-                                  <td>{{ $pb->namepavilions }}</td>
+                                  <td id="{{$pb->id}}">{{ $pb->namepavilions }}</td>
                                   @endif
                                 @endforeach
-                                <td>{{ $recluso->jailcells }}</td>
-                                <td>{{ $recluso->coderecluse }}</td>
+                                  <td>{{ $recluso->jailcells }}</td>
+                                  <td>{{ $recluso->coderecluse }}</td>
                                 @if(($recluso->Sex)==('1'))
                                   <td id="1">Hombre</td>
                                 @else
                                   <td id="2">Mujer</td>
                                 @endif
+
                                 @foreach($TD as $td)
                                 @if(($recluso->idtypedocument)==($td->id))
-                                <td id="{{$a}}">{{ $td->typedoc }}</td>
+                                  <td id="{{$td->id}}">{{ $td->typedoc }}</td>
                                 @endif
                                 @endforeach
-                                <td>{{ $recluso->document }}</td>
-                                <td>{{ $recluso->namerecluse }}</td>
-                                <td>{{ $recluso->surnamerecluse }}</td>
+                                  <td>{{ $recluso->document }}</td>
+                                  <td>{{ $recluso->namerecluse }}</td>
+                                  <td>{{ $recluso->surnamerecluse }}</td>
                                 @if(($recluso->state)=='1')
-                                <td id="1">Activo</td>
+                                  <td id="1">Activo</td>
                                 @else
-                                <td id="2">Inactivo</td>
-                                @endif 
-                                <td>
-                                <a type="button" class="btnEditar btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</a>
+                                  <td id="2">Inactivo</td>
+                                @endif
 
-                                <br>
-                                    <a href="" class="btn btn-danger">Eliminar</a>
-                                </td>
+                                  <td>
+                                  <a type="button" class="btnEditar btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</a>
+                                  </td>
+                                  <td style=" display:none;">{{ $recluso->id }}</td> 
                             </tr>  
-                            @endforeach
-                                           
+                            @endforeach    
                         </tbody>
                     </table>
                 </div>
@@ -82,10 +75,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form class="row g-3" method="POST" action="{{route('recluso.create')}}">
+      <form class="row g-3" method="POST" action="{{route('recluso.update',2)}}" id="form" name="form">
+        <input type="text" style=" display:none;" id="Idt" name="Idt">
+        @method('PATCH')
                         @csrf
                         <input type="text" style="display:none;" value="1" name="idusercreate">
-                        {{ $Us}}
                         <div class="col-md-4">
                             <label for="inputSexo" class="form-label">Sexo</label>
                             <select id="inputSexo" class="form-select" name="sex">
@@ -96,10 +90,9 @@
                         <div class="col-md-4">
                             <label for="inputTypeDocument" class="form-label">Tipo de Documento</label>
                             <select id="inputTypeDocument" class="form-select" name="idtypedocument">
-                              <option selected>Seleccione tipo documento</option>
-                              @foreach($TD as $TypeDoc)
-                              <option value="{{ $TypeDoc->id }}">{{ $TypeDoc->typedoc }}</option>
-                              @endforeach
+                              <option id="Td1"></option>
+                              <option id="Td2"></option>
+                              <option id="Td3"></option>
                             </select>
                           </div>
                         <div class="col-md-6">
@@ -122,10 +115,13 @@
                           <div class="col-md-4">
                             <label for="inputPavilion" class="form-label">Pabellón</label>
                             <select id="inputPavilion" class="form-select" name="idpavilions">
-                              <option selected>Seleccione Pabellón</option>
-                              @foreach($PB as $Pv)
-                              <option value="{{ $Pv->id }}">{{ $Pv->namepavilions }}</option>
-                              @endforeach
+                              <option id="Pb" ></option>
+                              <option id="Pb1"></option>
+                              <option id="Pb2"></option>
+                              <option id="Pb3"></option>
+                              <option id="Pb4"></option>
+                              <option id="Pb5"></option>
+                              <option id="Pb6"></option>
                             </select>
                           </div>
 
@@ -141,19 +137,16 @@
                             </select>
                           </div>
                         <div class="col-12">
-                          <button type="submit" class="btn btn-primary">Guardar</button>
+                          <button type="submit" class="btn btn-primary">Editar</button>
                         </div>
                       </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Editar</button>
+
       </div>
     </div>
   </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 </div>
 @endsection
