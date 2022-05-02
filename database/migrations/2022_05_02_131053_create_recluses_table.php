@@ -23,7 +23,7 @@ class CreateReclusesTable extends Migration
             $table->string('surnamerecluse',100)->comment('Apellidos');
             $table->string('idpavilions',30)->comment('pabellon');
             $table->string('jailcells',30)->comment('celda');
-            $table->string('state',1)->comment('Estado del recluso');
+            $table->string('state',10)->comment('Estado del recluso');
             $table->unsignedBigInteger('idusercreate')->comment('Usuario que crea');
             $table->unsignedBigInteger('iduseredit')->comment('Usuario que edita')->nullable();
             $table->foreign('idusercreate')->references('id')->on('users');
