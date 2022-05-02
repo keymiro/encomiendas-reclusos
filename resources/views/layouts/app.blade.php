@@ -52,7 +52,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="Rc">
                                 <a class="dropdown-item" href="{{route('recluso.create')}}">Crear</a>
-                                <a href="{{route('recluso.show')}}" class="dropdown-item" >Todos</a>
+                                <a href="{{route('recluso.index')}}" class="dropdown-item" >Todos</a>
                             </div>
                             </div>
                         </li>

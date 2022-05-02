@@ -33,10 +33,15 @@ Route::get('Admin/inactive/{id}',[AdminController::class,'destroy'])->name('admi
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //
-
-Route::get('/recluso/create',[RecluseController::class,'index'])->name('recluso.create');
+Route::get('/recluso/index',[RecluseController::class,'index'])->name('recluso.index');
+Route::get('/recluso/create',[RecluseController::class,'create'])->name('recluso.create');
 Route::post('/recluso/create',[RecluseController::class,'store'])->name('recluso.store');
-Route::get('/recluso/show',[RecluseController::class,'show'])->name('recluso.show');
 Route::get('/recluso/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->name('recluso.ReclusosAjax');
+Route::get('/recluso/edit/{id}',[RecluseController::class,'edit'])->name('recluso.edit');
+Route::patch('/recluso/update/{id}',[RecluseController::class,'update'])->name('recluso.update');
+Route::get('/recluso/show/{id}',[RecluseController::class,'show'])->name('recluso.show');
+
+
+
 
 
