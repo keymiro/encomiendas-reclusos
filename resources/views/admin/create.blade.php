@@ -42,8 +42,8 @@
                             <label for="inputState" class="form-label">Estado</label>
                             <select id="inputState" class="form-select" name="state" required>
                               <option selected>Seleccione un estado</option>
-                              <option value="activo">activo</option>
-                              <option value="inactivo">inactivo</option>
+                              <option value="Activo">Activo</option>
+                              <option value="Inactivo">Inactivo</option>
                             </select>
                           </div>
                         <div class="col-12">

@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder
             'email'           =>'superadmin@gmail.com',
             'password'        => Hash::make('12345678'),
             'rol'            =>'super-admin',
-            'state'           =>'activo',
+            'state'           =>'Activo',
         ]);
 
         DB::table('users')->insert([
@@ -32,7 +32,7 @@ class UserTableSeeder extends Seeder
             'email'           =>'mancipe@gmail.com',
             'password'        => Hash::make('12345678'),
             'rol'            =>'super-admin',
-            'state'           =>'activo',
+            'state'           =>'Activo',
         ]);
         DB::table('users')->insert([
             'document'        =>'985445',
@@ -41,7 +41,7 @@ class UserTableSeeder extends Seeder
             'email'           =>'fulanon@gmail.com',
             'password'        => Hash::make('12345678'),
             'rol'            =>'super-admin',
-            'state'           =>'activo',
+            'state'           =>'Activo',
         ]);
 
     }
