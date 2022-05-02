@@ -46,10 +46,28 @@
                             <a class="nav-link" href="{{route('admin.index')}}">Administrador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Reclusos</a>
+                        <div class="dropdown">
+                            <a id="Rc" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Reclusos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="Rc">
+                                <a class="dropdown-item" href="{{route('recluso.create')}}">Crear</a>
+                                <a href="{{route('recluso.show')}}" class="dropdown-item" >Todos</a>
+                            </div>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Encomiendas</a>
+                        <div class="dropdown">
+                            <a id="Ec" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Ecomiendas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="Ec">
+                                <a class="dropdown-item" href="#">Recibir Ecomientas</a>
+                                <a href="#" class="dropdown-item" >Dashboad de Entrega</a>
+                                <a href="#" class="dropdown-item" >Dashboad de Devolución</a>
+                            </div>
+                            </div>
+                    </div>
                         </li>
                         <!-- Authentication Links -->
                         @guest

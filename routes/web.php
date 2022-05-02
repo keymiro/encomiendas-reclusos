@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RecluseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +31,12 @@ Route::patch('Admin/update/{id}',[AdminController::class,'update'])->name('admin
 Route::get('Admin/show/{id}',[AdminController::class,'show'])->name('admin.show');
 Route::get('Admin/inactive/{id}',[AdminController::class,'destroy'])->name('admin.destroy');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//
+
+Route::get('/recluso/create',[RecluseController::class,'index'])->name('recluso.create');
+Route::post('/recluso/create',[RecluseController::class,'store'])->name('recluso.store');
+Route::get('/recluso/show',[RecluseController::class,'show'])->name('recluso.show');
+Route::get('/recluso/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->name('recluso.ReclusosAjax');
+
+
