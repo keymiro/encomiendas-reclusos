@@ -12,7 +12,7 @@
                         @csrf
                         <div class="col-md-4">
                             <label for="inputSexo" class="form-label">Sexo</label>
-                            <select id="inputSexo" class="form-select" name="inputSexo" disabled>
+                            <select id="inputSexo" class="form-select" name="inputSexo">
                              @if($Rc->Sex=="Hombre")
                                 <option value="Hombre">Hombre</option>
                                 <option value="Mujer">Mujer</option>
@@ -24,7 +24,7 @@
                           </div>
                         <div class="col-md-4">
                             <label for="inputTypeDocument" class="form-label">Tipo de Documento</label>
-                            <select id="inputTypeDocument" class="form-select" name="inputTypeDocument" disabled>
+                            <select id="inputTypeDocument" class="form-select" name="inputTypeDocument">
                             @if($Rc->idtypedocument=="TI")
                               <option value="TI">TI</option>
                               <option value="CC">CC</option>
@@ -42,24 +42,24 @@
                           </div>
                         <div class="col-md-6">
                           <label for="inputDocument" class="form-label">Número De Documento</label>
-                          <input type="text" class="form-control" id="inputDocument" name="inputDocument" value="{{$Rc->document}}" readonly required>
+                          <input type="text" class="form-control" id="inputDocument" name="inputDocument" value="{{$Rc->document}}">
                         </div>
                         <div class="col-md-6">
                           <label for="inputCodeRecluso" class="form-label">Código de Recluso</label>
-                          <input type="text" class="form-control" id="inputCodeRecluso" name="inputCodeRecluso" value="{{$Rc->coderecluse}}" readonly required>
+                          <input type="text" class="form-control" id="inputCodeRecluso" name="inputCodeRecluso" value="{{$Rc->coderecluse}}">
                         </div>
                         <div class="col-md-6">
                           <label for="inputNames" class="form-label">Nombres de Recluso</label>
-                          <input type="text" class="form-control" id="inputNames" name="inputNames" value="{{$Rc->namerecluse}}" readonly required>
+                          <input type="text" class="form-control" id="inputNames" name="inputNames" value="{{$Rc->namerecluse}}">
                         </div>
                         <div class="col-md-6">
                             <label for="inputSurName" class="form-label">Apellidos de Recluso</label>
-                            <input type="text" class="form-control" id="inputSurName" name="inputSurName" value="{{$Rc->surnamerecluse}}" readonly required>
+                            <input type="text" class="form-control" id="inputSurName" name="inputSurName" value="{{$Rc->surnamerecluse}}">
                           </div>
 
                           <div class="col-md-4">
                             <label for="inputPavilion" class="form-label">Pabellón</label>
-                            <select id="inputPavilion" class="form-select" name="inputPavilion" disabled>
+                            <select id="inputPavilion" class="form-select" name="inputPavilion">
                             @if($Rc->idpavilions=="Pabelló 1")
                               <option value="Pabelló 1">Pabelló 1</option>
                               <option value="Pabelló 2">Pabelló 2</option>
@@ -122,11 +122,11 @@
 
                         <div class="col-md-6">
                           <label for="inputNumberCell" class="form-label">Número de Celda</label>
-                          <input type="text" class="form-control" id="inputNumberCell" name="inputNumberCell" value="{{$Rc->jailcells}}" readonly required>
+                          <input type="text" class="form-control" id="inputNumberCell" name="inputNumberCell" value="{{$Rc->jailcells}}">
                         </div>
                         <div class="col-md-4">
                             <label for="inputState" class="form-label">Estado</label>
-                            <select id="inputState" class="form-select" name="inputState" disabled>
+                            <select id="inputState" class="form-select" name="inputState">
                             @if($Rc->state=="Activo")
                               <option value="Activo">Activo</option>
                               <option value="Inactivo">Inactivo</option>

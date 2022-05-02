@@ -32,17 +32,28 @@
                         <div class="col-md-4">
                           <label for="inputState" class="form-label">Rol</label>
                           <select id="inputState" class="form-select" name="rol" disabled required>
-                            <option selected value="{{$user->rol}}">{{$user->rol}}</option>
+                          @if($user->rol=="super-admin")
                             <option value="super-admin">super-admin</option>
                             <option value="admin">admin</option>
+                            @else
+                            <option value="admin">admin</option>
+                            <option value="super-admin">super-admin</option>
+                            @endif
                           </select>
                         </div>
                         <div class="col-md-4">
                             <label for="inputState" class="form-label">Estado</label>
                             <select id="inputState" class="form-select" name="state" disabled required>
-                              <option selected value="{{$user->state}}">{{$user->state}}</option>
-                              <option value="activo">activo</option>
-                              <option value="inactivo">inactivo</option>
+                              @if($user->state=="Activo")
+                              <option value="Activo">Activo</option>
+                              <option value="Inactivo">Inactivo</option>
+                            @else
+                              <option value="Inactivo">Inactivo</option>
+                              <option value="Activo">Activo</option>
+                            @endif
+                            </select>
+
+
                             </select>
                           </div>
                       </form>
