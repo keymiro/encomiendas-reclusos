@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-dark text-white">Edición</div>
+                <div class="card-header bg-dark text-white">{{ __('Dato del Usuario ') }}{{$user->names}}</div>
                 <div class="card-body">
-                    <form class="row g-3>
-                        @csrf
+                    <form class="row g-3">
+
                         <div class="col-md-6">
                           <label for="inputEmail4" class="form-label">Email</label>
                           <input type="email" class="form-control" readonly required id="inputEmail4" name="email" value="{{$user->email}}">
@@ -52,8 +52,6 @@
                               <option value="Activo">Activo</option>
                             @endif
                             </select>
-
-
                             </select>
                           </div>
                       </form>
