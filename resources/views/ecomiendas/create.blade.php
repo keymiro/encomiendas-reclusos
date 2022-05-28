@@ -10,20 +10,20 @@
                     <form class="row g-3" method="POST" action="{{route('admin.store')}}">
                         @csrf
                         <div class="col-md-6">
-                            <label for="inputDocument" class="form-label">Número De Documento de Recluso</label>
+                            <label for="Document" class="form-label">Número De Documento de Recluso</label>
                             <input type="text" class="form-control" id="inputDocument" name="inputDocument" required>
                         </div>
                             <div class="col-md-6">
-                                <label for="Recluso" class="form-label" >Nombre</label>
-                                <input type="text" class="form-control" reonly>
+                                <label for="NameReclusoView" class="form-label" >Nombre</label>
+                                <input type="text" class="form-control" id="NameReclusoView" name="NameReclusoView" reonly>
                             </div>
                             <div class="col-md-6">
-                                <label for="Recluso" class="form-label">Pabellon</label>
-                                <input type="text" class="form-control" disabled>
+                                <label for="PavilionView" class="form-label">Pabellon</label>
+                                <input type="text" class="form-control" id="PavilionView" name="PavilionView" disabled>
                             </div>
                             <div class="col-md-6">
-                                <label for="Recluso" class="form-label">Celda</label>
-                                <input type="text" class="form-control" disabled>
+                                <label for="NumberCellView" class="form-label">Celda</label>
+                                <input type="text" class="form-control" id="NumberCellView" name="NumberCellView" disabled>
                             </div>
                     </form>
                 </div>
@@ -52,16 +52,16 @@
                                 <input type="text" class="form-control" id="inputSurName" name="inputSurName" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputSurName" class="form-label">Correo Electronico</label>
-                                <input type="email" class="form-control" id="inputSurName" name="inputSurName" required>
+                                <label for="email" class="form-label">Correo Electronico</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputSurName" class="form-label">Numero de Celular</label>
-                                <input type="email" class="form-control" id="inputSurName" name="inputSurName" required>
+                                <label for="inputCellPhone" class="form-label">Numero de Celular</label>
+                                <input type="email" class="form-control" id="inputCellPhone" name="inputCellPhone" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputSurName" class="form-label">Numero de Telefono</label>
-                                <input type="email" class="form-control" id="inputSurName" name="inputSurName" required>
+                                <label for="inputPhone" class="form-label">Numero de Telefono</label>
+                                <input type="email" class="form-control" id="inputPhone" name="inputPhone" required>
                             </div>
                         </form>
                     </div>    
@@ -69,16 +69,16 @@
                         <div class="card-body">              
                             <form class="row g-3" method="POST" action="{{route('admin.store')}}">  
                                 <div class="col-md-6">
-                                    <label for="inputSurName" class="form-label">Item</label>
-                                    <input type="email" class="form-control" id="inputSurName" name="inputSurName" required>
+                                    <label for="inputItem" class="form-label">Item</label>
+                                    <input type="email" class="form-control" id="inputItem" name="inputItem" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="inputSurName" class="form-label">Descripción</label>
-                                    <input type="email" class="form-control" id="inputSurName" name="inputSurName" required>
+                                    <label for="inputDescription" class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" id="inputDescription" name="inputDescription" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="inputSurName" class="form-label">Cantidad</label>
-                                    <input type="email" class="form-control" id="inputSurName" name="inputSurName" required>
+                                    <label for="inputCant" class="form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="inputCant" name="inputCant" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="inputState" class="form-label">Estado</label>
@@ -164,7 +164,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-footer">
-          <a href="/" class="btn btn-secondary">Imprimir</a>
+          <a href="" class="btn btn-secondary">Imprimir</a>
           <a href="{{route('ecomienda.create')}}" class="btn btn-primary">Nuevo Registro</a>
       </div>
     </div>
