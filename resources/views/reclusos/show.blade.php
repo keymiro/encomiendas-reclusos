@@ -5,11 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            <div class="card-header bg-dark text-white">{{ __('Editar Recluso') }}</div>
+            <div class="card-header bg-dark text-white">{{ __('Datos del Recluso ') }}{{$Rc->namerecluse}}</div>
                 <div class="card-body">
-                    <form class="row g-3" method="POST" action="{{route('recluso.update',$Rc->id)}}">
-                    @method('PATCH')
-                        @csrf
+                    <form class="row g-3" >
                         <div class="col-md-4">
                             <label for="inputSexo" class="form-label">Sexo</label>
                             <select id="inputSexo" class="form-select" name="inputSexo" disabled>
@@ -136,9 +134,6 @@
                             @endif
                             </select>
                           </div>
-                        <div class="col-12">
-                          <button type="submit" class="btn btn-primary">Editar</button>
-                        </div>
                       </form>
                 </div>
             </div>
