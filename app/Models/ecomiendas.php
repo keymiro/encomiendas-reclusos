@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Recluse extends Authenticatable
+
+class ecomiendas extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -19,18 +20,19 @@ class Recluse extends Authenticatable
      */
     protected $fillable = [
         'id',
-        'type_document_id',
-        'document',
-        'code_recluse',
-        'sex',
-        'name_recluse',
-        'surname_recluse',
-        'pavilions_id',
-        'jailcells',
-        'state',
+        'cod',
+        'recluse_id',
+        'type_document_send_id',
+        'document_send',
+        'name_send',
+        'surname_send',
+        'email_send',
+        'cellphone_send',
+        'phone_send',
         'user_create_id',
+        'user_edit_id',
     ];
-        /**
+      /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
@@ -48,3 +50,4 @@ class Recluse extends Authenticatable
 
     ];
 }
+

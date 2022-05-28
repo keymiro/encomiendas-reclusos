@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecluseController;
+use App\Http\Controllers\EcomiendaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,18 @@ Route::get('/recluso/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->n
 Route::get('/recluso/edit/{id}',[RecluseController::class,'edit'])->name('recluso.edit');
 Route::patch('/recluso/update/{id}',[RecluseController::class,'update'])->name('recluso.update');
 Route::get('/recluso/show/{id}',[RecluseController::class,'show'])->name('recluso.show');
+
+//
+Route::get('/ecomienda/index',[EcomiendaController::class,'index'])->name('ecomienda.index');
+Route::get('/ecomienda/create',[EcomiendaController::class,'create'])->name('ecomienda.create');
+Route::post('/ecomienda/create',[EcomiendaController::class,'store'])->name('ecomienda.store');
+Route::get('/ecomienda/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->name('ecomienda.ReclusosAjax');
+Route::get('/ecomienda/edit/{id}',[RecluseController::class,'edit'])->name('ecomienda.edit');
+Route::patch('/ecomienda/update/{id}',[RecluseController::class,'update'])->name('ecomienda.update');
+Route::get('/ecomienda/show/{id}',[RecluseController::class,'show'])->name('ecomienda.show');
+
+//
+Route::post('/ecomienda/print',[PrintController::class,'print'])->name('ecomienda.print');
 
 
 
