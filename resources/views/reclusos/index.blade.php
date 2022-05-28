@@ -38,13 +38,13 @@
             autoWidth: false,
             "ajax":'{{route('recluso.ReclusosAjax')}}',
             "columns": [
-                {data: 'idtypedocument'},
+                {data: 'type_document_id'},
                 {data: 'document'},
-                {data: 'coderecluse'},
+                {data: 'code_recluse'},
                 {data: 'Sex'},
-                {data: 'namerecluse'},
-                {data: 'surnamerecluse'},
-                {data: 'idpavilions'},
+                {data: 'name_recluse'},
+                {data: 'surname_recluse'},
+                {data: 'pavilions_id'},
                 {data: 'jailcells'},
                 {data: 'state'},
                 {data: 'btn'}

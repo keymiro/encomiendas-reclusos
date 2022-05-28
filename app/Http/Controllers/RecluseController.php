@@ -22,16 +22,16 @@ class RecluseController extends Controller
     public function store(Request $request)
     {
         $document = Recluse::create([
-            'idtypedocument'=>$request['inputTypeDocument'],
+            'type_document_id'=>$request['inputTypeDocument'],
             'document'  =>$request['inputDocument'],
-            'coderecluse'=>$request['inputCodeRecluso'],
+            'code_recluse'=>$request['inputCodeRecluso'],
             'sex' =>$request['inputSexo'],
-            'namerecluse'=>$request['inputNames'],
-            'surnamerecluse'  =>$request['inputSurName'],
-            'idpavilions'    =>$request['inputPavilion'],
+            'name_recluse'=>$request['inputNames'],
+            'surname_recluse'  =>$request['inputSurName'],
+            'pavilions_id'    =>$request['inputPavilion'],
             'jailcells'    =>$request['inputNumberCell'],
             'state'    =>$request['inputState'],
-            'idusercreate'      =>auth()->user()->id,
+            'user_create_id'      =>auth()->user()->id,
         ]);
 
         return back()->with('notification','Recluso creado correctamente');
@@ -55,17 +55,18 @@ class RecluseController extends Controller
     public function update(Request $request, $id)
     {
         $Rc = Recluse::findOrFail($id);
+        console.log($Rc);
         $Rc->update([
-        'idtypedocument'=>$request['inputTypeDocument'],
+        'type_document_id'=>$request['inputTypeDocument'],
         'document'  =>$request['inputDocument'],
-        'coderecluse'=>$request['inputCodeRecluso'],
+        'code_recluse'=>$request['inputCodeRecluso'],
         'sex' =>$request['inputSexo'],
-        'namerecluse'=>$request['inputNames'],
-        'surnamerecluse'  =>$request['inputSurName'],
-        'idpavilions'    =>$request['inputPavilion'],
+        'name_recluse'=>$request['inputNames'],
+        'surname_recluse'  =>$request['inputSurName'],
+        'pavilions_id'    =>$request['inputPavilion'],
         'jailcells'    =>$request['inputNumberCell'],
         'state'    =>$request['inputState'],
-        'iduseredit'      =>auth()->user()->id]);
+        'user_edit_id'      =>auth()->user()->id]);
         return back()->with('notification','Recluso actualizado correctamente');
     }
     public function show($id)
