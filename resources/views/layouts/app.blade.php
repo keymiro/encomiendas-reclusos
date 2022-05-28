@@ -63,7 +63,7 @@
                                     Ecomiendas
                             </a>
                             <div class="dropdown-menu" aria-labelledby="Ec">
-                                <a class="dropdown-item" href="#">Recibir Ecomientas</a>
+                                <a class="dropdown-item" href="{{route('ecomienda.create')}}">Recibir Ecomientas</a>
                                 <a href="#" class="dropdown-item" >Dashboad de Entrega</a>
                                 <a href="#" class="dropdown-item" >Dashboad de Devolución</a>
                             </div>
