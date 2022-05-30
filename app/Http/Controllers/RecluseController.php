@@ -55,7 +55,6 @@ class RecluseController extends Controller
     public function update(Request $request, $id)
     {
         $Rc = Recluse::findOrFail($id);
-        console.log($Rc);
         $Rc->update([
         'type_document_id'=>$request['inputTypeDocument'],
         'document'  =>$request['inputDocument'],
@@ -73,5 +72,21 @@ class RecluseController extends Controller
     {
         $Rc = Recluse::findOrFail($id);
         return view('reclusos.show')->with(compact('Rc'));
+    }
+
+    public function recluseSearch(Request $request){
+        $search =$request['inputCodeRecluse'];
+        $recluse = Recluse::where('code_recluse',$search)->first();
+
+        if(isset($recluse)){
+            return response()->json(['recluse'=>$recluse,
+                                     'state'=>200
+                                    ]);
+
+        }else{
+            return response()->Json(['message'=>'No existe el registro que esta tratando de buscar.']);
+        }
+
+
     }
 }
