@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecluseController;
 use App\Http\Controllers\EcomiendaController;
+use Illuminate\Routing\Router;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,7 @@ Route::get('Admin/inactive/{id}',[AdminController::class,'destroy'])->name('admi
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //
+Route::get('/recluso/search',[RecluseController::class,'recluseSearch'])->name('recluso.search');
 Route::get('/recluso/index',[RecluseController::class,'index'])->name('recluso.index');
 Route::get('/recluso/create',[RecluseController::class,'create'])->name('recluso.create');
 Route::post('/recluso/create',[RecluseController::class,'store'])->name('recluso.store');
