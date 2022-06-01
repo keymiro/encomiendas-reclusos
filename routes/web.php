@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecluseController;
-use App\Http\Controllers\EcomiendaController;
+use App\Http\Controllers\EncomiendaController;
 use Illuminate\Routing\Router;
 
 /*
@@ -45,17 +45,17 @@ Route::get('/recluso/edit/{id}',[RecluseController::class,'edit'])->name('reclus
 Route::patch('/recluso/update/{id}',[RecluseController::class,'update'])->name('recluso.update');
 Route::get('/recluso/show/{id}',[RecluseController::class,'show'])->name('recluso.show');
 
-//
-Route::get('/ecomienda/index',[EcomiendaController::class,'index'])->name('ecomienda.index');
-Route::get('/ecomienda/create',[EcomiendaController::class,'create'])->name('ecomienda.create');
-Route::post('/ecomienda/create',[EcomiendaController::class,'store'])->name('ecomienda.store');
-Route::get('/ecomienda/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->name('ecomienda.ReclusosAjax');
-Route::get('/ecomienda/edit/{id}',[RecluseController::class,'edit'])->name('ecomienda.edit');
-Route::patch('/ecomienda/update/{id}',[RecluseController::class,'update'])->name('ecomienda.update');
-Route::get('/ecomienda/show/{id}',[RecluseController::class,'show'])->name('ecomienda.show');
+
+Route::get('/encomienda/index',[EncomiendaController::class,'index'])->name('ecomienda.index');
+Route::get('/encomienda/create',[EncomiendaController::class,'create'])->name('ecomienda.create');
+Route::post('/encomienda/create',[EncomiendaController::class,'store'])->name('ecomienda.store');
+Route::get('/encomienda/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->name('ecomienda.ReclusosAjax');
+Route::get('/encomienda/edit/{id}',[RecluseController::class,'edit'])->name('ecomienda.edit');
+Route::patch('/encomienda/update/{id}',[RecluseController::class,'update'])->name('ecomienda.update');
+Route::get('/encomienda/show/{id}',[RecluseController::class,'show'])->name('ecomienda.show');
 
 //
-Route::post('/ecomienda/print',[PrintController::class,'print'])->name('ecomienda.print');
+Route::post('/encomienda/print',[PrintController::class,'print'])->name('ecomienda.print');
 
 
 

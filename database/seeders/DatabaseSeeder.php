@@ -15,9 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserTableSeeder::class);
         $this->call(RecluseSeeder::class);
-        $this->call(usersendSeeder::class);
-        $this->call(EcomiendasSeeder::class);
-        $this->call(ItemsEcomiendaSeeder::class);
 
     }
 }
