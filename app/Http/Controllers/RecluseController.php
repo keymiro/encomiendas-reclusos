@@ -79,7 +79,8 @@ class RecluseController extends Controller
         $recluse = Recluse::where('code_recluse',$search)->first();
 
         if(isset($recluse)){
-            return response()->json(['recluse'=>$recluse,
+            return response()->json([
+                                     'recluse'=>$recluse,
                                      'state'=>200
                                     ]);
 
