@@ -34,7 +34,24 @@ class EncomiendaController extends Controller
             'user_created_id'       =>auth()->user()->id,
         ]);
 
-        return back()->with('notification','encomienda creada correctamente');
+        return redirect()->route('ecomienda.show', ['id'=>$encomienda->id]);
 
     }
+    public function show($id){
+        $encomienda = Encomienda::findOrFail($id);
+        return view('ecomiendas.show')->with(compact('encomienda'));
+    }
+    public function updateCode(Request $request){
+     $vardos = $request['id_encomienda'];
+        $var = encomienda::findOrFail($vardos);
+        $var->update(['cod'=>'']);
+
+    }
+
+
+
+
+
+    
+
 }
