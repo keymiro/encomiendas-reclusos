@@ -52,7 +52,7 @@ Route::post('/encomienda/create',[EncomiendaController::class,'store'])->name('e
 Route::get('/encomienda/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->name('ecomienda.ReclusosAjax');
 Route::get('/encomienda/edit/{id}',[RecluseController::class,'edit'])->name('ecomienda.edit');
 Route::patch('/encomienda/update/{id}',[RecluseController::class,'update'])->name('ecomienda.update');
-Route::get('/encomienda/show/{id}',[RecluseController::class,'show'])->name('ecomienda.show');
+Route::get('/encomienda/show/{id}',[EncomiendaController::class,'show'])->name('ecomienda.show');
 
 //
 Route::post('/encomienda/print',[PrintController::class,'print'])->name('ecomienda.print');

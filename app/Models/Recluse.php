@@ -38,7 +38,7 @@ class Recluse extends Authenticatable
     protected $hidden = [
 
     ];
-    
+
     /**
      * The attributes that should be cast.
      *
@@ -47,4 +47,8 @@ class Recluse extends Authenticatable
     protected $casts = [
 
     ];
+
+    public function encomienda(){
+        return $this->hasMany(Encomienda::class);
+    }
 }

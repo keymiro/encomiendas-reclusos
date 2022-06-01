@@ -25,4 +25,11 @@ class Encomienda extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function user_created(){
+        return $this->belongsTo(User::class,'user_created_id');
+    }
+    public function recluse(){
+        return $this->belongsTo(Recluse::class,'recluse_id');
+    }
 }
