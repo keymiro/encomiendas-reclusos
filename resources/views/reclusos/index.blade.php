@@ -2,25 +2,25 @@
 
 @section('content')
 @include('layouts.style-datatables')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-10 col-md-10">
+        <div class="col">
             <div class="card">
             <div class="card-header bg-dark text-white">{{ __('Todos Los Reclusos') }}</div>
                 <div class="card-body">
-                    <table class="table"  id="admin">
+                    <table class="table table-dark table-striped table-responsive"  id="admin">
                         <thead>
                             <tr>
-                                <th>Pabellón</th>
-                                <th>Celda</th>
-                                <th>Codigo de Recluso</th>
-                                <th>Sexo</th>                              
-                                <th>Tipo de Documento</th>
-                                <th>Documento</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
-                                <th>Estado</th>
-                                <th>Acción</th>
+                                <th scope="col">Pabellón</th>
+                                <th scope="col">Celda</th>
+                                <th scope="col">Codigo de Recluso</th>
+                                <th scope="col">Sexo</th>
+                                <th scope="col">Tipo de Documento</th>
+                                <th scope="col">Documento</th>
+                                <th scope="col">Nombres</th>
+                                <th scope="col">Apellidos</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col" class="notexport">Acción</th>
                             </tr>
                         </thead>
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Encomienda;
+use App\Models\Recluse;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -25,8 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = User::count();
-        
-        return view('home')->with(compact('user'));
+        $recluse = Recluse::count();
+        $encomienda = Encomienda::count();
+
+        return view('home')->with(compact('user','recluse','encomienda'));
     }
     public function login()
     {

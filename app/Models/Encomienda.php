@@ -32,4 +32,8 @@ class Encomienda extends Model
     public function recluse(){
         return $this->belongsTo(Recluse::class,'recluse_id');
     }
+
+    protected $casts = [
+        'created_at' => 'date:d-m-Y'
+    ];
 }
