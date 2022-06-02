@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MessageEncomienda;
 use App\Models\Encomienda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class EncomiendaController extends Controller
@@ -84,6 +86,22 @@ class EncomiendaController extends Controller
             ->addColumn('btn', 'layouts.btn-action-encomienda')
             ->rawColumns(['btn'])
             ->toJson();
+    }
+
+    public function email($id){
+        $encomienda = Encomienda::with('recluse')->findOrFail($id);
+        $enco = [
+                 'td_recluse'       =>$encomienda->recluse->code_recluse,
+                 'cod'              =>$encomienda->cod,
+                 'accepted_objects' =>$encomienda->accepted_objects,
+                 'declined_objects' =>$encomienda->declined_objects,
+                 'declined_observations' =>$encomienda->declined_observations,
+                 'created_at'            =>$encomienda->created_at
+
+                ];
+      $mail=  Mail::to("$encomienda->email_send")->send(new MessageEncomienda($enco));
+    return response('detalle encomienda enviada correctamente');
+
     }
 
     public function updateCode(Request $request){
