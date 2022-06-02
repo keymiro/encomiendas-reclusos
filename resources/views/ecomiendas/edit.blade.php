@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col">
             <div class="card-header  bg-dark text-white my-4 shadow rounded text-center"><h2>Editar Encomienda</h2></div>
             <div class="card">
              <form action="{{route('ecomienda.update',$encomienda->id)}}" enctype="multipart/form-data" method="POST">
