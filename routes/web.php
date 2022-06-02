@@ -49,9 +49,9 @@ Route::get('/recluso/show/{id}',[RecluseController::class,'show'])->name('reclus
 Route::get('/encomienda/index',[EncomiendaController::class,'index'])->name('ecomienda.index');
 Route::get('/encomienda/create',[EncomiendaController::class,'create'])->name('ecomienda.create');
 Route::post('/encomienda/create',[EncomiendaController::class,'store'])->name('ecomienda.store');
-Route::get('/encomienda/ReclusosAjax',[RecluseController::class,'ReclusosAjax'])->name('ecomienda.ReclusosAjax');
-Route::get('/encomienda/edit/{id}',[RecluseController::class,'edit'])->name('ecomienda.edit');
-Route::patch('/encomienda/update/{id}',[RecluseController::class,'update'])->name('ecomienda.update');
+Route::get('/encomienda/encomiendaAjax',[EncomiendaController::class,'encomiendasAjax'])->name('ecomienda.Ajax');
+Route::get('/encomienda/edit/{id}',[EncomiendaController::class,'edit'])->name('ecomienda.edit');
+Route::patch('/encomienda/update/{id}',[EncomiendaController::class,'update'])->name('ecomienda.update');
 Route::get('/encomienda/show/{id}',[EncomiendaController::class,'show'])->name('ecomienda.show');
 
 //

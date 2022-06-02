@@ -35,11 +35,9 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="inputTypeDocument" class="form-label">Tipo de Documento</label>
-                                    <select id="inputTypeDocument" class="form-select" name="inputTypeDocument" readonly>
+                                    <select id="inputTypeDocument" class="form-select" name="inputTypeDocument" disabled>
                                     <option value="{{$encomienda->type_document_send}}">{{$encomienda->type_document_send}}</option>
-                                    <option value="TI">TI</option>
-                                    <option value="CC">CC</option>
-                                    <option value="CE">CE</option>
+
                                     </select>
                                 </div>
                                 <div class="col-md-6">
@@ -74,7 +72,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputCant" class="form-label">Evidencia fotografica</label>
-                                    <img src="{{Storage::url($encomienda->url_img)}}" class="img-fluid rounded-sm" alt="p">
+                                    <img src="{{Storage::url($encomienda->url_img)}}" class="img-fluid rounded " alt="p">
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -85,8 +83,8 @@
                             </div>
                         </div>
                             <div class="col-md-12 my-4 mx-4">
-                                <button type="submit" class="btn btn-primary">Editar</button>
-                                {{-- <a href="{{route('action',$encomienda->id)}}"></a>
+                                <a href="{{route('ecomienda.edit',$encomienda->id)}}" class="btn btn-primary">Editar</a>
+                                {{-- <a href=""></a>
                                 <input type="hidden" name="id_encomienda" value="{{$encomienda->id}}"> --}}
                                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                    Imprimir Sctiker
