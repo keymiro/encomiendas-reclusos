@@ -53,7 +53,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="Rc">
                                 <a class="dropdown-item" href="{{route('recluso.create')}}">Crear</a>
-                                <a href="{{route('recluso.index')}}" class="dropdown-item" >Todos</a>
+                                <a href="{{route('recluso.index')}}" class="dropdown-item" >Listar</a>
                             </div>
                             </div>
                         </li>
@@ -64,6 +64,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="Ec">
                                 <a class="dropdown-item" href="{{route('ecomienda.create')}}">Recibir Ecomientas</a>
+                                <a class="dropdown-item" href="{{route('ecomienda.index')}}">Listar</a>
                             </div>
                             </div>
                     </div>

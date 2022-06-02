@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Encomienda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EncomiendaController extends Controller
 {
@@ -41,6 +42,50 @@ class EncomiendaController extends Controller
         $encomienda = Encomienda::findOrFail($id);
         return view('ecomiendas.show')->with(compact('encomienda'));
     }
+
+    public function edit($id){
+        $encomienda = Encomienda::findOrFail($id);
+        return view('ecomiendas.edit')->with(compact('encomienda'));
+    }
+
+    public function update(Request $request ,$id){
+
+        $encomienda = Encomienda::findOrFail($id);
+
+        if ($request->hasFile('file'))
+        {
+            Storage::delete($encomienda->url);
+            $url= $request->file('file')->store('public/control');
+        }else{
+            $url=$encomienda->ur_img;
+        }
+
+        $encomienda->update([
+            'type_document_send'    =>$request['inputTypeDocument'],
+            'document_send'         =>$request['inputDocument'],
+            'names_send'            =>$request['inputNames'],
+            'email_send'            =>$request['email'],
+            'accepted_objects'      =>$request['accepted_objects'],
+            'declined_objects'      =>$request['declined_objects'],
+            'declined_observations' =>$request['declined_observations'],
+            'url_img'               =>$url,
+            'recluse_id'            =>$request['recluseId'],
+            'user_created_id'       =>auth()->user()->id,
+        ]);
+
+        return back()->with('notification','Encomienda actualizada correctamente');
+    }
+    public function encomiendasAjax()
+    {
+    //    composer require yajra/laravel-datatables-oracle : para retornar los datos como pide datatables
+        $encomiendas = Encomienda::with('recluse')->latest()->get();
+        return datatables()
+            ->of( $encomiendas)
+            ->addColumn('btn', 'layouts.btn-action-encomienda')
+            ->rawColumns(['btn'])
+            ->toJson();
+    }
+
     public function updateCode(Request $request){
      $vardos = $request['id_encomienda'];
         $var = encomienda::findOrFail($vardos);
@@ -52,6 +97,6 @@ class EncomiendaController extends Controller
 
 
 
-    
+
 
 }
