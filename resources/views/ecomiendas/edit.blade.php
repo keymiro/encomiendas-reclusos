@@ -65,7 +65,7 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="accepted_objects">{{$encomienda->accepted_objects}}</textarea>
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="accepted_objects" required>{{$encomienda->accepted_objects}}</textarea>
                                         <label for="floatingTextarea2">Objetos Aceptados</label>
                                       </div>
                                 </div>
@@ -78,7 +78,7 @@
                                 <div class="col-md-6">
                                     <label for="inputCant" class="form-label">Evidencia fotografica</label>
                                     <img src="{{Storage::url($encomienda->url_img)}}" class="img-fluid rounded " alt="p">
-                                    <input class="form-control" type="file" id="formFile" name="file" required value="{{$encomienda->url_img}}">
+                                    <input class="form-control" type="file" id="formFile" name="file"  value="{{$encomienda->url_img}}">
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
