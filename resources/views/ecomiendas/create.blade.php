@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col">
-            <div class="card-header  bg-dark text-white my-4 shadow rounded text-center"><h2>Recibir Encomiendas</h2></div>
+            <div class="card-header  bg-dark text-white my-4 shadow rounded text-center"><h2><i class="fas fa-boxes"></i> Recibir Encomiendas</h2></div>
             <div class="card">
               <form  method="POST" action="{{route('ecomienda.store')}}"  enctype="multipart/form-data">
                 @csrf
@@ -85,7 +85,7 @@
                                       </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
                                 </div>
                             </div>
                         </div>

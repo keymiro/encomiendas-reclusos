@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col">
-            <div class="card-header  bg-dark text-white my-4 shadow rounded text-center"><h2>Detalle Encomienda</h2></div>
+            <div class="card-header  bg-dark text-white my-4 shadow rounded text-center"><h2><i class="fas fa-boxes"></i> Detalle Encomienda</h2></div>
             <div class="card">
                 <div class="card-header  bg-dark text-white">Datos del recluso</div>
                 <div class="card-body">
@@ -83,11 +83,11 @@
                             </div>
                         </div>
                             <div class="col-md-12 my-4 mx-4">
-                                <a href="{{route('ecomienda.edit',$encomienda->id)}}" class="btn btn-primary">Editar</a>
+                                <a href="{{route('ecomienda.edit',$encomienda->id)}}" class="btn btn-primary"><i class="fas fa-user-edit"></i> Editar</a>
                                 {{-- <a href=""></a>
                                 <input type="hidden" name="id_encomienda" value="{{$encomienda->id}}"> --}}
                                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                   Imprimir Sctiker
+                                    <i class="fas fa-qrcode"></i> Imprimir Sctiker
                                 </button>
                             </div>
                         </div>

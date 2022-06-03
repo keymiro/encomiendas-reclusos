@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            <div class="card-header bg-dark text-white">{{ __('Editar Recluso') }}</div>
+            <div class="card-header bg-dark text-white"><i class="fas fa-user-edit"></i> {{ __('Editar Recluso') }}</div>
                 <div class="card-body">
                     <form class="row g-3" method="POST" action="{{route('recluso.update',$Rc->id)}}">
                     @method('PATCH')
@@ -137,7 +137,7 @@
                             </select>
                           </div>
                         <div class="col-12">
-                          <button type="submit" class="btn btn-primary">Editar</button>
+                          <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Editar</button>
                         </div>
                       </form>
                 </div>
