@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="declined_objects" required></textarea>
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="declined_objects" ></textarea>
                                         <label for="floatingTextarea2">Objetos Rechazados</label>
                                       </div>
                                 </div>
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="declined_observations" required></textarea>
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="declined_observations" ></textarea>
                                         <label for="floatingTextarea2">Observaciónes Rechazados</label>
                                       </div>
                                 </div>

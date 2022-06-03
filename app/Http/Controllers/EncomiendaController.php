@@ -61,7 +61,7 @@ class EncomiendaController extends Controller
             Storage::delete($encomienda->url);
             $url= $request->file('file')->store('public/control');
         }else{
-            $url=$encomienda->ur_img;
+            $url=$encomienda->url_img;
         }
 
         $encomienda->update([
