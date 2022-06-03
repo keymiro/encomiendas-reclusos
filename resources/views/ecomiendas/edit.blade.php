@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col">
-            <div class="card-header  bg-dark text-white my-4 shadow rounded text-center"><h2>Editar Encomienda</h2></div>
+            <div class="card-header  bg-dark text-white my-4 shadow rounded text-center"><h2><i class="fas fa-boxes"></i> Editar Encomienda</h2></div>
             <div class="card">
              <form action="{{route('ecomienda.update',$encomienda->id)}}" enctype="multipart/form-data" method="POST">
                 @method('PATCH')
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                             <div class="col-md-12 my-4 mx-4">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
                                 <a href="{{route('ecomienda.show',$encomienda->id)}}"  class="btn btn-success">Ir a Encomienda</a>
                             </div>
                         </div>

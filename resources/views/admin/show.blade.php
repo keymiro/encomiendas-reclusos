@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-dark text-white">{{ __('Dato del Usuario ') }}{{$user->names}}</div>
+                <div class="card-header bg-dark text-white"><i class="fas fa-eye"></i>  {{ __('Datos del Usuario ') }}{{$user->names}}</div>
                 <div class="card-body">
                     <form class="row g-3">
 

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-dark text-white">Nuevo </div>
+                <div class="card-header bg-dark text-white"><i class="fas fa-user-plus"></i> Nuevo </div>
 
                 <div class="card-body">
                     <form class="row g-3" method="POST" action="{{route('admin.store')}}">
@@ -47,7 +47,7 @@
                             </select>
                           </div>
                         <div class="col-12">
-                          <button type="submit" class="btn btn-primary">Guardar</button>
+                          <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
                         </div>
                       </form>
                 </div>

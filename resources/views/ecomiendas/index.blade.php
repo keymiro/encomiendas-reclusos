@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-            <div class="card-header bg-dark text-white">{{ __('Listado encomiendas') }}</div>
+            <div class="card-header bg-dark text-white"><i class="fas fa-boxes"></i> {{ __('Listado encomiendas') }}</div>
                 <div class="card-body">
                     <table class="table table-dark table-striped table-responsive"  id="admin">
                         <thead>
