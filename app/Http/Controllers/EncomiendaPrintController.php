@@ -14,7 +14,7 @@ class EncomiendaPrintController extends Controller
     {
         $encomienda = Encomienda::findOrFail($id);
         $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
- 
+
         function generate_string($input, $strength = 16) {
             $input_length = strlen($input);
             $random_string = '';
@@ -24,7 +24,7 @@ class EncomiendaPrintController extends Controller
             }
         return $random_string;
         }
-        
+
         $codeEcom=generate_string($permitted_chars, 10);
 
         if(empty($encomienda->cod)){
@@ -84,26 +84,10 @@ class EncomiendaPrintController extends Controller
         $impresora->text("\n===============================\n");
         $impresora->feed(3);
         $impresora->close();
-        $this->email($id);
-        return redirect('/encomienda/index');
+        
+        return redirect()->route('encomienda.email', ['id'=>$id]);
     }
 
-    public function email($id){
-        $encomienda = Encomienda::with('recluse')->findOrFail($id);
-        $enco = [
-                 'td_recluse'       =>$encomienda->recluse->code_recluse,
-                 'cod'              =>$encomienda->cod,
-                 'accepted_objects' =>$encomienda->accepted_objects,
-                 'declined_objects' =>$encomienda->declined_objects,
-                 'declined_observations' =>$encomienda->declined_observations,
-                 'created_at'            =>$encomienda->created_at
-
-                ];
-      $mail=  Mail::to("$encomienda->email_send")->send(new MessageEncomienda($enco));
-    
-    return response('detalle encomienda enviada correctamente');
-
-    }
 
 
 }
