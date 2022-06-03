@@ -118,7 +118,7 @@
             <input type="text" class="form-control" id="inputNames" name="inputNames" readonly value="{{$encomienda->recluse->name_recluse}} {{$encomienda->recluse->surname_recluse}}">
         </div>
         <div class="col-md-6">
-            <label for="inputEcomi1" class="form-label">Código de ecomienda</label>
+            <label for="inputEcomi1" class="form-label">Código de encomienda</label>
             <input type="text" class="form-control" id="inputEcomi" name="inputEcomi" readonly value="{{$encomienda->cod}}">
             <input type="text" class="form-control" id="act" name="act"  style="display:none" value="{{$act}}">
         </div>
@@ -135,8 +135,9 @@
       </div>
       <div><p></p></div>
       <div class="modal-footer">
-          <a href="{{route('ecomienda.print',$encomienda->id)}}" class="btn btn-secondary">Imprimir</a>
-          <a href="{{route('ecomienda.create')}}" class="btn btn-primary">Nuevo Registro</a>
+          <a href="{{route('ecomienda.print',$encomienda->id)}}" class="btn btn-danger">Imprimir</a>
+          <a href="{{route('ecomienda.create')}}" class="btn btn-primary">Registrar Ecomienta</a>
+          <a href="{{route('ecomienda.index')}}" class="btn btn-secondary">Listado de encomiendas</a>
       </div>    
     </div>
   </div>
