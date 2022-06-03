@@ -90,22 +90,7 @@ class EncomiendaController extends Controller
             ->toJson();
     }
 
-    public function email($id){
-        $encomienda = Encomienda::with('recluse')->findOrFail($id);
-        $enco = [
-                 'td_recluse'       =>$encomienda->recluse->code_recluse,
-                 'cod'              =>$encomienda->cod,
-                 'accepted_objects' =>$encomienda->accepted_objects,
-                 'declined_objects' =>$encomienda->declined_objects,
-                 'declined_observations' =>$encomienda->declined_observations,
-                 'created_at'            =>$encomienda->created_at
-
-                ];
-      $mail=  Mail::to("$encomienda->email_send")->send(new MessageEncomienda($enco));
-    return response('detalle encomienda enviada correctamente');
-
-    }
-
+    
     public function updateCode(Request $request){
      $vardos = $request['id_encomienda'];
         $var = encomienda::findOrFail($vardos);
