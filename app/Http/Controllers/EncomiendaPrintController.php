@@ -84,6 +84,7 @@ class EncomiendaPrintController extends Controller
         $impresora->text("\n===============================\n");
         $impresora->feed(3);
         $impresora->close();
+
         
         return redirect()->route('encomienda.email', ['id'=>$id]);
     }
