@@ -47,13 +47,13 @@
                             <label for="inputPavilion" class="form-label">Pabellón</label>
                             <select id="inputPavilion" class="form-select" name="inputPavilion" required>
                               <option value="">Seleccione Pabellón</option>
-                              <option value="Pabelló 1">Pabelló 1</option>
-                              <option value="Pabelló 2">Pabelló 2</option>
-                              <option value="Pabelló 3">Pabelló 3</option>
-                              <option value="Pabelló 4">Pabelló 4</option>
-                              <option value="Pabelló 5">Pabelló 5</option>
-                              <option value="Pabelló 6">Pabelló 6</option>
-                              <option value="Pabelló 7">Pabelló 7</option>
+                              <option value="Pabellón 1">Pabellón 1</option>
+                              <option value="Pabellón 2">Pabellón 2</option>
+                              <option value="Pabellón 3">Pabellón 3</option>
+                              <option value="Pabellón 4">Pabellón 4</option>
+                              <option value="Pabellón 5">Pabellón 5</option>
+                              <option value="Pabellón 6">Pabellón 6</option>
+                              <option value="Pabellón 7">Pabellón 7</option>
                             </select>
                           </div>
 

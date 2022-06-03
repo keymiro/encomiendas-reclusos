@@ -36,8 +36,7 @@
                                 <div class="col-md-6">
                                     <label for="inputTypeDocument" class="form-label">Tipo de Documento</label>
                                     <select id="inputTypeDocument" class="form-select" name="inputTypeDocument" disabled>
-                                    <option value="{{$encomienda->type_document_send}}">{{$encomienda->type_document_send}}</option>
-
+                                        <option value="{{$encomienda->type_document_send}}">{{$encomienda->type_document_send}}</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
@@ -86,9 +85,13 @@
                                 <a href="{{route('ecomienda.edit',$encomienda->id)}}" class="btn btn-primary">Editar</a>
                                 {{-- <a href=""></a>
                                 <input type="hidden" name="id_encomienda" value="{{$encomienda->id}}"> --}}
+<<<<<<< Updated upstream
                                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                    Imprimir Sctiker
                                 </button>
+=======
+                                <a href="{{route('ecomienda.cod',$encomienda->id)}}"  class="btn btn-secondary"><i class="fas fa-qrcode"></i> Imprimi Sctiker</a>
+>>>>>>> Stashed changes
                             </div>
                         </div>
                     </div>
@@ -97,6 +100,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- Button trigger modal -->
 
 
@@ -105,15 +110,43 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Opciones de Ecomiendas</h5>
+        <h5 class="modal-title text-center" id="exampleModalLabel">ESTABLECIMIENTO PENINTENCIARIO Y CARCELARIO (EPC) YOPAL</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-footer">
-          <a href="" class="btn btn-secondary">Imprimir</a>
-          <a href="{{route('ecomienda.create')}}" class="btn btn-primary">Nuevo Registro</a>
+      <div class="modal-body">
+        <div class="col-md-6">
+            <label for="inputCodeRecluset" class="form-label"> Número De TD</label>
+            <input type="text" id='searchCodeRecluse' class="form-control" id="inputCodeRecluse" name="inputCodeRecluse" readonly value="{{$encomienda->recluse->code_recluse}}">
+            <input type="hidden" name="recluseId" id="recluseId">
+        </div>
+        <div class="col-md-6">
+            <label for="inputNames" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="inputNames" name="inputNames" readonly value="{{$encomienda->recluse->name_recluse}} {{$encomienda->recluse->surname_recluse}}">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEcomi1" class="form-label">Código de ecomienda</label>
+            <input type="text" class="form-control" id="inputEcomi" name="inputEcomi" readonly value="{{$encomienda->cod}}">
+            <input type="text" class="form-control" id="act" name="act"  style="display:none" value="{{$act}}">
+        </div>
       </div>
+      <div class="row d-flex justify-content-around">
+        <div class="col-md-5">
+            <label for="PavilionView" class="form-label">Pabellon</label>
+            <input type="text" class="form-control" id="PavilionView" name="PavilionView" readonly value="{{$encomienda->recluse->pavilions_id}}">
+        </div>
+        <div class="col-md-5">
+            <label for="NumberCellView" class="form-label">Celda</label>
+            <input type="text" class="form-control" id="NumberCellView" name="NumberCellView" readonly value="{{$encomienda->recluse->jailcells}}">
+        </div>
+      </div>
+      <div><p></p></div>
+      <div class="modal-footer">
+          <a href="{{route('ecomienda.print',$encomienda->id)}}" class="btn btn-secondary">Imprimir</a>
+          <a href="{{route('ecomienda.create')}}" class="btn btn-primary">Nuevo Registro</a>
+      </div>    
     </div>
   </div>
 </div>
-
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="{{ asset('js/Modal.js') }}" defer></script>
 @endsection

@@ -39,13 +39,15 @@ class EncomiendaController extends Controller
 
     }
     public function show($id){
+        $act="";
         $encomienda = Encomienda::findOrFail($id);
-        return view('ecomiendas.show')->with(compact('encomienda'));
+        return view('ecomiendas.show')->with(compact('encomienda','act'));
     }
 
     public function edit($id){
         $encomienda = Encomienda::findOrFail($id);
-        return view('ecomiendas.edit')->with(compact('encomienda'));
+        $act="";
+        return view('ecomiendas.edit')->with(compact('encomienda','act'));
     }
 
     public function update(Request $request ,$id){

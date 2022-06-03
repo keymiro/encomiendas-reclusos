@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecluseController;
 use App\Http\Controllers\EncomiendaController;
+use App\Http\Controllers\EncomiendaPrintController;
 use Illuminate\Routing\Router;
 
 /*
@@ -55,7 +56,8 @@ Route::patch('/encomienda/update/{id}',[EncomiendaController::class,'update'])->
 Route::get('/encomienda/show/{id}',[EncomiendaController::class,'show'])->name('ecomienda.show');
 
 //
-Route::post('/encomienda/print',[PrintController::class,'print'])->name('ecomienda.print');
+Route::get('/encomienda/print/{id}',[EncomiendaPrintController::class,'print'])->name('ecomienda.print');
+Route::get('/encomienda/codg/{id}',[EncomiendaPrintController::class,'cod'])->name('ecomienda.cod');
 
 
 
