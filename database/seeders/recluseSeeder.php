@@ -22,7 +22,7 @@ class recluseSeeder extends Seeder
         'Sex' => 'Hombre',
         'name_recluse' => 'JUAN CARLOS',
         'surname_recluse' => 'PRUEBA PRUEBA',
-        'pavilions_id' => 'Pabelló 1',
+        'pavilions_id' => 'Pabellón 1',
         'jailcells' => '102',
         'state' => 'Activo',
         'user_create_id' => '1',
