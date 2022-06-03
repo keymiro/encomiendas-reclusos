@@ -85,13 +85,7 @@
                                 <a href="{{route('ecomienda.edit',$encomienda->id)}}" class="btn btn-primary"><i class="fas fa-user-edit"></i> Editar</a>
                                 {{-- <a href=""></a>
                                 <input type="hidden" name="id_encomienda" value="{{$encomienda->id}}"> --}}
-<<<<<<< Updated upstream
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fas fa-qrcode"></i> Imprimir Sctiker
-                                </button>
-=======
                                 <a href="{{route('ecomienda.cod',$encomienda->id)}}"  class="btn btn-secondary"><i class="fas fa-qrcode"></i> Imprimi Sctiker</a>
->>>>>>> Stashed changes
                             </div>
                         </div>
                     </div>
