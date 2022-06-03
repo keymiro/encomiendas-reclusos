@@ -44,7 +44,7 @@
                             <a class="nav-link active" aria-current="page" href="{{route('home')}}">Inicio</a>
                           </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.index')}}">Administrador</a>
+                           <a class="nav-link" href="{{route('admin.index')}}">Administrador</a>
                         </li>
                         <li class="nav-item">
                         <div class="dropdown">
@@ -84,7 +84,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="btn btn-outline-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->names }}
                                 </a>
 

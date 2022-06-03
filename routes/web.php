@@ -54,7 +54,7 @@ Route::get('/encomienda/encomiendaAjax',[EncomiendaController::class,'encomienda
 Route::get('/encomienda/edit/{id}',[EncomiendaController::class,'edit'])->name('ecomienda.edit');
 Route::patch('/encomienda/update/{id}',[EncomiendaController::class,'update'])->name('ecomienda.update');
 Route::get('/encomienda/show/{id}',[EncomiendaController::class,'show'])->name('ecomienda.show');
-
+Route::get('/mensaje-detalle-encomienda/{id}',[EncomiendaController::class,'email'])->name('encomienda.email');
 //
 Route::get('/encomienda/print/{id}',[EncomiendaPrintController::class,'print'])->name('ecomienda.print');
 Route::get('/encomienda/codg/{id}',[EncomiendaPrintController::class,'cod'])->name('ecomienda.cod');

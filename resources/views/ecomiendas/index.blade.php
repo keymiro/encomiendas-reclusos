@@ -2,25 +2,25 @@
 
 @section('content')
 @include('layouts.style-datatables')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-10 col-md-10">
+        <div class="col">
             <div class="card">
-            <div class="card-header bg-dark text-white">{{ __('Listado encomiendas') }}</div>
+            <div class="card-header bg-dark text-white"><i class="fas fa-boxes"></i> {{ __('Listado encomiendas') }}</div>
                 <div class="card-body">
-                    <table class="table"  id="admin">
+                    <table class="table table-dark table-striped table-responsive"  id="admin">
                         <thead>
                             <tr>
-                                <th>Fecha de ingreso</th>
-                                <th>TD</th>
-                                <th>Nombres Recluso</th>
-                                <th>Apellidos Recluso</th>
-                                <th>Codigo Encomienda</th>
-                                <th>Objeto Aceptado</th>
-                                <th>Objecto Rechazado</th>
-                                <th>Observación Objecto Rechazado</th>
-                                <th>Documento quien entrego encomienda</th>
-                                <th>Acción</th>
+                                <th scope="col">Fecha de ingreso</th>
+                                <th scope="col">TD</th>
+                                <th scope="col">Nombres Recluso</th>
+                                <th scope="col">Apellidos Recluso</th>
+                                <th scope="col">Codigo Encomienda</th>
+                                <th scope="col">Objeto Aceptado</th>
+                                <th scope="col">Objecto Rechazado</th>
+                                <th scope="col">Observación Objecto Rechazado</th>
+                                <th scope="col">Documento Quien Entrega</th>
+                                <th scope="col" class="notexport">Acción</th>
                             </tr>
                         </thead>
 

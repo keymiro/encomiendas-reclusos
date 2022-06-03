@@ -3,9 +3,9 @@
 @include('layouts.style-datatables')
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col">
             <div class="card">
-                <div class="card-header  bg-dark text-white">Listado de administradores</div>
+                <div class="card-header  bg-dark text-white"> <i class="fas fa-user-cog"></i> Listado de administradores</div>
                 <div class="card-body">
                     <a class="btn btn-primary my-2"  type="button" href="{{route('admin.create')}}"><i class="fas fa-user-plus"></i> Nuevo admin</a>
                     <table class="table table-dark table-striped table-responsive shadow rounded" id="admin">
